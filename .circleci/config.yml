@@ -8,6 +8,19 @@ jobs:
   build:
     docker:
       - image: alpine/git
+    parameters:
+        github-repo-name:
+            description: secondproject
+            type: env_var_name
+            default: GITHUB_REPO_NAME
+        github-repo-url:
+            description: https://github.com/rguuduru/secondproject.git
+            type: env_var_name
+            default: GITHUB_REPO_URL
+        github-personnal-token:
+            description: 20f8ed37967590d9602cd1f34f18ad0bf8e5eaf5
+            type: env_var_name
+            default: GITHUB_PERSONAL_TOKEN
     steps:
       - checkout
       - docsync/sync-to-doc-repo
