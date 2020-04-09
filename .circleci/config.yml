@@ -6,21 +6,21 @@ orbs:
 # Orchestrate or schedule a set of jobs
 jobs:
     build:
-    docker:
-      - image: alpine/git
-    parameters:
-        github-repo-name:
-            description: Target Project
-            type: env_var_name
-            default: GITHUB_REPO_NAME
-        github-repo-url:
-            description: Target Project URL
-            type: env_var_name
-            default: GITHUB_REPO_URL
-        github-personnal-token:
-            description: GITHUB Token
-            type: env_var_name
-            default: GITHUB_PERSONAL_TOKEN
-    steps:
-      - checkout
-      - docsync/sync-to-doc-repo
+        docker:
+            - image: alpine/git
+        parameters:
+            github-repo-name:
+                description: Target Project
+                type: env_var_name
+                default: GITHUB_REPO_NAME
+            github-repo-url:
+                description: Target Project URL
+                type: env_var_name
+                default: GITHUB_REPO_URL
+            github-personnal-token:
+                description: GITHUB Token
+                type: env_var_name
+                default: GITHUB_PERSONAL_TOKEN
+        steps:
+        - checkout
+        - docsync/sync-to-doc-repo
