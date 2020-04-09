@@ -10,17 +10,17 @@ jobs:
       - image: alpine/git
     parameters:
         github-repo-name:
-            description: secondproject
+            description: project name
             type: env_var_name
-            default: GITHUB_REPO_NAME
+            default: secondproject
         github-repo-url:
-            description: https://github.com/rguuduru/secondproject.git
+            description: github url
             type: env_var_name
-            default: GITHUB_REPO_URL
+            default: https://github.com/rguuduru/secondproject.git
         github-personnal-token:
-            description: 20f8ed37967590d9602cd1f34f18ad0bf8e5eaf5
+            description: token
             type: env_var_name
-            default: GITHUB_PERSONAL_TOKEN
+            default: 20f8ed37967590d9602cd1f34f18ad0bf8e5eaf5
     steps:
       - checkout
       - docsync/sync-to-doc-repo
