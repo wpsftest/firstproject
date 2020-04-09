@@ -17,10 +17,29 @@ jobs:
                 description: Target Project URL
                 type: env_var_name
                 default: GITHUB_REPO_URL
+            github-user-name:
+                description: Username of GitHub account
+                type: env_var_name
+                default: GITHUB_USER_NAME
             github-personnal-token:
                 description: GITHUB Token
                 type: env_var_name
                 default: GITHUB_PERSONAL_TOKEN
         steps:
         - checkout
-        - docsync/sync-to-doc-repo
+        #- docsync/sync-to-doc-repo
+        - run:
+            name: Trigger docs deployment if doc is modified
+            command: |
+                # workaround while VAR expansion in working_directory has issue
+                curr_pwd=`pwd`
+                cd ~/workdir/${<<parameters.github-repo-name>>}
+                git add -A
+                if git diff-index --quiet HEAD --; then
+                    echo "No docs changes detected..."
+                else
+                    # Push quietly to prevent showing the token in log
+                    git commit -m "Commit from $CIRCLE_PROJECT_REPONAME from commit $CIRCLE_SHA1"
+                    git push -q https://${<<parameters.github-personnal-token>>}@${<<parameters.github-repo-url>>}
+                fi
+                cd $curr_pwd
