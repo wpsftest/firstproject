@@ -29,17 +29,21 @@ jobs:
         - checkout
         #- docsync/sync-to-doc-repo
         - run:
-            name: Trigger docs deployment if doc is modified
-            command: |
-                # workaround while VAR expansion in working_directory has issue
+            name: Upstream commits to Forked Project 
+            command: 
                 curr_pwd=`pwd`
-                cd ~/workdir/${<<parameters.github-repo-name>>}
-                git add -A
-                if git diff-index --quiet HEAD --; then
-                    echo "No docs changes detected..."
-                else
-                    # Push quietly to prevent showing the token in log
-                    git commit -m "Commit from $CIRCLE_PROJECT_REPONAME from commit $CIRCLE_SHA1"
-                    git push -q https://${<<parameters.github-personnal-token>>}@${<<parameters.github-repo-url>>}
-                fi
+                cd ~/workdir/
+                mkdir gitwork
+                cd gitwork
+                git clone https://${<<parameters.github-personnal-token>>}@github.com/wpsftest/firstproject.git
+                cd firstproject/
+                git branch
+                git remote -v
+                git remote add upstream https://${<<parameters.github-personnal-token>>}@github.com/rguuduru/firstproject.git
+                git remote -v
+                git fetch upstream
+                git checkout master
+                git merge upstream/master
+                git branch
+                git push origin master
                 cd $curr_pwd
