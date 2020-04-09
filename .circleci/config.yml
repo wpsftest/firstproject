@@ -32,7 +32,7 @@ jobs:
             name: Upstream commits to Forked Project 
             command: 
                 curr_pwd=`pwd`
-                cd ~/workdir/
+                cd ..
                 mkdir gitwork
                 cd gitwork
                 git clone https://${<<parameters.github-personnal-token>>}@github.com/wpsftest/firstproject.git
