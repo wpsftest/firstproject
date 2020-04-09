@@ -5,22 +5,22 @@ orbs:
   docsync: streamroot/docsync@1.0.2
 # Orchestrate or schedule a set of jobs
 jobs:
-  build:
+    build:
     docker:
       - image: alpine/git
     parameters:
         github-repo-name:
-            description: project name
+            description: Target Project
             type: env_var_name
-            default: secondproject
+            default: GITHUB_REPO_NAME
         github-repo-url:
-            description: github url
+            description: Target Project URL
             type: env_var_name
-            default: https://github.com/rguuduru/secondproject.git
+            default: GITHUB_REPO_URL
         github-personnal-token:
-            description: token
+            description: GITHUB Token
             type: env_var_name
-            default: 20f8ed37967590d9602cd1f34f18ad0bf8e5eaf5
+            default: GITHUB_PERSONAL_TOKEN
     steps:
       - checkout
       - docsync/sync-to-doc-repo
