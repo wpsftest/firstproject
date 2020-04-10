@@ -50,5 +50,5 @@ jobs:
                 git merge upstream/master
                 echo "about to do branch and push things to forked branch"
                 git branch
-                git push -f origin master
+                git push origin master
                 echo "completed pushing things"
