@@ -31,7 +31,7 @@ jobs:
                 default: GITHUB_PERSONAL_EMAIL
             github-personnal-fingerprint:
                 description: GITHUB fingerprint
-                type: string
+                type: env_var_name
                 default: GITHUB_PERSONAL_FINGERPRINT
 
         steps:
