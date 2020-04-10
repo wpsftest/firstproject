@@ -37,7 +37,7 @@ jobs:
         steps:
         - add_ssh_keys:
             fingerprints:
-                - "${<<parameters.github-personnal-fingerprint>>}"
+                - "c6:b4:cf:fc:89:27:fe:85:a5:05:7c:e5:1f:7a:4b:35"
         - run:
             name: "Upstream commits to Forked Project"
             command: |
