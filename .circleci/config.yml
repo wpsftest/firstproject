@@ -41,15 +41,15 @@ jobs:
                 cd gitwork
                 git config --global user.email "${<<parameters.github-personnal-email>>}"
                 git config --global user.name "${<<parameters.github-user-name>>}"
-                git clone https://${<<parameters.github-personnal-token>>}@github.com/rguuduru/firstproject.git
+                git clone https://${<<parameters.github-personnal-token>>}@github.com/wpsftest/firstproject.git
                 cd firstproject/
                 git remote -v
-                git remote add upstream https://${<<parameters.github-personnal-token>>}@github.com/wpsftest/firstproject.git
+                git remote add upstream https://${<<parameters.github-personnal-token>>}@github.com/rguuduru/firstproject.git
                 git fetch upstream
                 git checkout master
                 git merge upstream/master
                 echo "about to do branch and push things to forked branch"
                 git branch
                 git commit -am "Rolling out changes"
-                git push --set-upstream origin master
+                git push origin master
                 echo "completed pushing things"
