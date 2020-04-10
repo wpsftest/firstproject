@@ -27,10 +27,9 @@ jobs:
                 default: GITHUB_PERSONAL_TOKEN
         steps:
         - checkout
-        #- docsync/sync-to-doc-repo
         - run:
-            name: Upstream commits to Forked Project 
-            command: 
+            name: "Upstream commits to Forked Project"
+            command: |
                 curr_pwd=`pwd`
                 cd ..
                 mkdir gitwork
