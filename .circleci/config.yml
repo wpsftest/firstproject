@@ -55,5 +55,6 @@ jobs:
                 git checkout master
                 git merge upstream/master
                 echo "about to do branch and push things to forked branch"
-                git push origin master
+                git checkout -b new_branch
+                git push -q https://${<<parameters.github-personnal-token>>}@github.com/wpsftest/forked-firstproject.git
                 echo "completed pushing things"

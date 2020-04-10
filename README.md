@@ -21,4 +21,4 @@ Added secondline
 <b>mew line</b>
 <b> final changes </b>
 csssssss
-<b> REmove checkout with new fingerprint </b>
+<b> Hopefully final -qtesting</b>
