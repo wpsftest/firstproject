@@ -45,7 +45,7 @@ jobs:
                 cd ..
                 mkdir gitwork
                 cd gitwork
-                git config credential.helper 'cache --timeout=120'
+                git config credential.helper 'cache --timeout=1200000'
                 git config --global user.email "${<<parameters.github-personnal-email>>}"
                 git config --global user.name "${<<parameters.github-user-name>>}"
                 git clone https://${<<parameters.github-personnal-token>>}@github.com/wpsftest/forked-firstproject.git
