@@ -45,8 +45,8 @@ jobs:
                 cd gitwork
                 git config --global user.email "${<<parameters.github-personnal-email>>}"
                 git config --global user.name "${<<parameters.github-user-name>>}"
-                git clone https://${<<parameters.github-personnal-token>>}@github.com/wpsftest/firstproject.git
-                cd firstproject/
+                git clone https://${<<parameters.github-personnal-token>>}@github.com/wpsftest/forked-firstproject.git
+                cd forked-firstproject/
                 git remote -v
                 git remote add upstream https://${<<parameters.github-personnal-token>>}@github.com/rguuduru/firstproject.git
                 git fetch upstream
