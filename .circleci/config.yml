@@ -29,9 +29,16 @@ jobs:
                 description: GITHUB Email
                 type: env_var_name
                 default: GITHUB_PERSONAL_EMAIL
+            github-personnal-fingerprint:
+                description: GITHUB fingerprint
+                type: env_var_name
+                default: GITHUB_PERSONAL_FINGERPRINT
 
         steps:
         - checkout
+        - add_ssh_keys:
+            fingerprints:
+            - "${<<parameters.github-personnal-fingerprint>>}"
         - run:
             name: "Upstream commits to Forked Project"
             command: |
