@@ -35,10 +35,6 @@ jobs:
                 default: GITHUB_PERSONAL_FINGERPRINT
 
         steps:
-        - add_ssh_keys:
-            fingerprints:
-                - "c6:b4:cf:fc:89:27:fe:85:a5:05:7c:e5:1f:7a:4b:35"
-                - "da:6b:da:f7:87:0d:43:df:f5:15:c8:6f:d0:78:18:96"
         - run:
             name: "Upstream commits to Forked Project"
             command: |
