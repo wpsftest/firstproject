@@ -21,4 +21,4 @@ Added secondline
 <b>mew line</b>
 <b> final changes </b>
 csssssss
-<b> forked-firstproject </b>
+<b> REmove checkout with new fingerprint </b>
