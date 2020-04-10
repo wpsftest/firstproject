@@ -35,9 +35,6 @@ jobs:
                 default: GITHUB_PERSONAL_FINGERPRINT
 
         steps:
-        - add_ssh_keys:
-            fingerprints:
-                - "${<<parameters.github-personnal-fingerprint>>}"
         - checkout
         - run:
             name: "Upstream commits to Forked Project"
