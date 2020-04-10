@@ -29,15 +29,7 @@ jobs:
                 description: GITHUB Email
                 type: env_var_name
                 default: GITHUB_PERSONAL_EMAIL
-            github-personnal-fingerprint:
-                description: GITHUB fingerprint
-                type: env_var_name
-                default: GITHUB_PERSONAL_FINGERPRINT
-
         steps:
-        - add_ssh_keys:
-            fingerprints: 
-               - "<< parameters.github-personnal-token >>"
         - run:
             name: "Upstream commits to Forked Project"
             command: |
@@ -59,5 +51,5 @@ jobs:
                 git config --global user.email "${<<parameters.github-personnal-email>>}"
                 git config --global user.name "${<<parameters.github-user-name>>}"
                 echo "beforepush things to forked branch"
-                git push https://15245a9fc608d8c1149f1f9667dd2d9cd627834e@github.com/wpsftest/forked-firstproject.git new_branch -f
+                git push --set-upstream origin new_branch -f
                 echo "completed pushing things"
