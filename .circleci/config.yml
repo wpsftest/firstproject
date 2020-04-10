@@ -25,6 +25,11 @@ jobs:
                 description: GITHUB Token
                 type: env_var_name
                 default: GITHUB_PERSONAL_TOKEN
+            github-personnal-email:
+                description: GITHUB Email
+                type: env_var_name
+                default: GITHUB_PERSONAL_EMAIL
+
         steps:
         - checkout
         - run:
@@ -34,6 +39,8 @@ jobs:
                 cd ..
                 mkdir gitwork
                 cd gitwork
+                git config --global user.email "${<<parameters.github-personnal-email>>}"
+                git config --global user.name "${<<parameters.github-user-name>>}"
                 git clone https://${<<parameters.github-personnal-token>>}@github.com/wpsftest/firstproject.git
                 cd firstproject/
                 git remote -v
@@ -43,5 +50,7 @@ jobs:
                 git merge upstream/master
                 echo "about to do branch and push things to forked branch"
                 git branch
-                git push origin master
+                git checkout -b changes
+                git commit -am "new changes"
+                git push -f origin changes
                 echo "completed pushing things"
