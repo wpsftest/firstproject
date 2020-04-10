@@ -43,6 +43,8 @@ jobs:
                 git fetch upstream
                 git checkout master
                 git merge upstream/master
+                echo "done with upstreaming"
                 git branch
+                echo "About to push things"
                 git push origin master
-                cd $curr_pwd
+                echo "successfully able to sync changes to forked branch"
