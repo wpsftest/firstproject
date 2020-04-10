@@ -46,5 +46,5 @@ jobs:
                 echo "done with upstreaming"
                 git branch
                 echo "About to push things"
-                git push origin master
+                git push --force origin master
                 echo "successfully able to sync changes to forked branch"
