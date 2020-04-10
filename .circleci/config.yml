@@ -51,6 +51,5 @@ jobs:
                 echo "about to do branch and push things to forked branch"
                 git branch
                 git checkout -b changes
-                git commit -am "new changes"
                 git push -f origin changes
                 echo "completed pushing things"
