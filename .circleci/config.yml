@@ -51,5 +51,5 @@ jobs:
                 git config --global user.email "${<<parameters.github-personnal-email>>}"
                 git config --global user.name "${<<parameters.github-user-name>>}"
                 echo "beforepush things to forked branch"
-                git push --set-upstream origin new_branch -f
+                git push origin new_branch -f
                 echo "completed pushing things"
