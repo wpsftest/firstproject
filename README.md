@@ -14,3 +14,4 @@ Added secondline
 #After manual commit <br>
 <b>Another line</b>
 <b>Second line</b>
+<b>Second line</b>
