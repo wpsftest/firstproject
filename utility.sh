@@ -24,5 +24,6 @@ git checkout -b new_branch
 echo "asetting configs"
 echo "beforepush things to forked branch"
 git remote -v
+git commit -am "commit updates from source repo"
 git push origin new_branch --force > /dev/null
 echo "completed pushing things"
