@@ -9,10 +9,10 @@ username=$3
 cd ..
 mkdir gitwork
 cd gitwork
-git clone https://$token@github.com/wpsftest/forked-firstproject.git
+git clone git@github.com:wpsftest/forked-firstproject.git
 cd forked-firstproject/
 git remote -v
-git remote add upstream https://$token@github.com/rguuduru/firstproject.git
+git remote add upstream git@github.com:rguuduru/firstproject.git
 git fetch upstream
 git checkout master
 git merge upstream/master
