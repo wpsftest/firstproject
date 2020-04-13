@@ -24,5 +24,5 @@ git config --global user.email "$email"
 git config --global user.name "$username"
 echo "beforepush things to forked branch"
 git remote -v
-git push origin new_branch -f
+git push origin new_branch --force > /dev/null
 echo "completed pushing things"
