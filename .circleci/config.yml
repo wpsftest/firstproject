@@ -30,6 +30,7 @@ jobs:
                 type: env_var_name
                 default: GITHUB_PERSONAL_EMAIL
         steps:
+        - checkout
         - run:
             name: "Upstream commits to Forked Project"
             command: |
