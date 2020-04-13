@@ -14,6 +14,7 @@ cd forked-firstproject/
 git config credential.helper 'cache --timeout=1200000'
 git config --global user.email "$email"
 git config --global user.name "$username"
+git config core.editor vim
 git remote -v
 git remote add upstream git@github.com:rguuduru/firstproject.git
 git fetch upstream
@@ -24,6 +25,5 @@ git checkout -b new_branch
 echo "asetting configs"
 echo "beforepush things to forked branch"
 git remote -v
-git commit -am "commit updates from source repo"
 git push origin new_branch --force > /dev/null
 echo "completed pushing things"
