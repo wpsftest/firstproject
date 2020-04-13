@@ -34,6 +34,6 @@ jobs:
             name: "Upstream commits to Forked Project"
             command: |
                 curr_pwd=`pwd`
-                echo "starting script execution"
-                ./../utility.sh ${<<parameters.github-personnal-token>>} ${<<parameters.github-personnal-email>>} ${<<parameters.github-user-name>>}
+                echo "starting script execution:  $curr_pwd"
+                ./utility.sh ${<<parameters.github-personnal-token>>} ${<<parameters.github-personnal-email>>} ${<<parameters.github-user-name>>}
                 echo "after executing script"
