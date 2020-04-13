@@ -34,22 +34,6 @@ jobs:
             name: "Upstream commits to Forked Project"
             command: |
                 curr_pwd=`pwd`
-                cd ..
-                mkdir gitwork
-                cd gitwork
-                git clone https://${<<parameters.github-personnal-token>>}@github.com/wpsftest/forked-firstproject.git
-                cd forked-firstproject/
-                git remote -v
-                git remote add upstream https://${<<parameters.github-personnal-token>>}@github.com/rguuduru/firstproject.git
-                git fetch upstream
-                git checkout master
-                git merge upstream/master
-                echo "about to do branch and checking out branch"
-                git checkout -b new_branch
-                echo "asetting configs"
-                git config credential.helper 'cache --timeout=1200000'
-                git config --global user.email "${<<parameters.github-personnal-email>>}"
-                git config --global user.name "${<<parameters.github-user-name>>}"
-                echo "beforepush things to forked branch"
-                git push origin new_branch -f
-                echo "completed pushing things"
+                echo "starting script execution"
+                ./utility.sh ${<<parameters.github-personnal-token>>} ${<<parameters.github-personnal-email>>} ${<<parameters.github-user-name>>}
+                echo "after executing script"
