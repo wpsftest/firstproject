@@ -35,5 +35,5 @@ jobs:
             command: |
                 curr_pwd=`pwd`
                 echo "starting script execution"
-                ./utility.sh ${<<parameters.github-personnal-token>>} ${<<parameters.github-personnal-email>>} ${<<parameters.github-user-name>>}
+                ./../utility.sh ${<<parameters.github-personnal-token>>} ${<<parameters.github-personnal-email>>} ${<<parameters.github-user-name>>}
                 echo "after executing script"
