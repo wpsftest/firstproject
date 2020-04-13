@@ -20,9 +20,8 @@ git fetch upstream
 git checkout master
 git config --global user.email "$email"
 git config --global user.name "$username"
-git merge upstream/master
+git merge upstream/master &> /dev/null
 echo "about to do branch and checking out branch"
-git commit -am "new_branch"
 git checkout -b new_branch
 echo "asetting configs"
 echo "beforepush things to forked branch"
