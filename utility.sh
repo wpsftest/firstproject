@@ -23,5 +23,6 @@ git config credential.helper 'cache --timeout=1200000'
 git config --global user.email "$email"
 git config --global user.name "$username"
 echo "beforepush things to forked branch"
+git remote -v
 git push origin new_branch -f
 echo "completed pushing things"
