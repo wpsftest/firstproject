@@ -9,11 +9,11 @@ username=$3
 cd ..
 mkdir gitwork
 cd gitwork
+git clone git@github.com:wpsftest/forked-firstproject.git
+cd forked-firstproject/
 git config credential.helper 'cache --timeout=1200000'
 git config --global user.email "$email"
 git config --global user.name "$username"
-git clone git@github.com:wpsftest/forked-firstproject.git
-cd forked-firstproject/
 git remote -v
 git remote add upstream git@github.com:rguuduru/firstproject.git
 git fetch upstream
